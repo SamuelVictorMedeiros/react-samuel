@@ -1,10 +1,10 @@
 import React from "react";
-import "./style.css";
 
 import { useState } from 'react'
+import { Tarefa } from './style'
 
-export default function App() {
-  const [tasks, setTasks] = useState(['Finalizar o módulo de JavaScript'])
+function App() {
+  const [tasks, setTasks] = useState([])
   const [inputValue , setInputValue] = useState('')
 
 
@@ -26,13 +26,14 @@ export default function App() {
 
       <ul>
         {
-          tasks.map( item => (
-            <li>{item}</li>
+          tasks.map( (item, index) => (
+            <Item key={index}>{item}</Item>
           ))
         }
       </ul>
     </div>
   );
 }
+export default App;
 
 
